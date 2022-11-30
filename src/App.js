@@ -1,35 +1,31 @@
 import * as React from 'react';
- import TodoList from './TodoList';
- import AddTodoForm from './AddTodoForm';
- import {useState} from 'react'; 
- import { useEffect } from 'react';
 
- const useSemiPersistentState = () =>{
-  const [todoList, setTodoList] = useState(
-    JSON.parse(localStorage.getItem('savedTodoList')) ?? []);
+const todoList = [
+  {
+    id: '1',
+    title: 'Complete assignment'
+  },
+  {
+    id: '2',
+    title: 'Finish reading Road to React'
+  },
+  {
+    id: '3',
+    title: 'Listen to Podcast episode.'
+  }
 
-   useEffect(() =>{
-    console.log('render')
-    localStorage.setItem('savedTodoList', JSON.stringify(todoList));
-  }, [todoList])
+]
 
-  return [todoList, setTodoList]
- }
-
-  function App(){
-    const [todoList, setTodoList] = useSemiPersistentState();
-    const addTodo = (newTodo) =>{
-      setTodoList([...todoList, newTodo]);
-     }
-
-    return (
-      <div>
-        <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={addTodo}/>
-        <TodoList todoList={todoList}/>
-      </div>
+function App(){
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <ul>
+      {todoList.map(function(item){
+          return <li key={item.id.title}>{item.title}</li>;
+      })}
+      </ul>
+    </div>
+ 
   )
-  
 }
-
-export default App;
