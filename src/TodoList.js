@@ -2,15 +2,13 @@ import React from "react";
  import TodoListItem from "./TodoListItem";
 
 
- export default function Todolist(props) {
-    console.log(props)
+ export default function Todolist(todoList) {
+    console.log(todoList)
     return(
         <ul>
-          {
-            props.todoList.map(item => <TodoListItem key={item.id} item={item} />)
-          }
-           
+          { todoList.todoList.map(item => { 
+          return <TodoListItem key={item.id} item={item} /> 
+        })}
         </ul>
-
        )
  };
