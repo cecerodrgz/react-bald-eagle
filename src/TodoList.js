@@ -7,11 +7,11 @@ import TodoListItem from "./TodoListItem";
         <ul>
           { todoList.map((todoListItem) => 
           <TodoListItem 
-          key={todoList.id} 
-          todoList={todoListItem}
+          key={todoListItem.id} 
+          todo={todoListItem}
           onRemoveTodo={onRemoveTodo} 
           /> 
-        )}        
+        )}       
         </ul>
        )
  };
