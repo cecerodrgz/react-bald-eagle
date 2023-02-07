@@ -3,6 +3,7 @@ import * as React from 'react';
  import AddTodoForm from './AddTodoForm';
  import {useState} from 'react'; 
  import { useEffect } from 'react';
+ import style from './App.module.css'
  
 
   function App(){
@@ -11,12 +12,6 @@ import * as React from 'react';
     const [isLoading, setIsLoading] = useState(true);
       
     useEffect(() => {
-      //   new Promise((resolve) => {
-      //   setTimeout(() => resolve ({data: {todoList: JSON.parse(localStorage.getItem('savedTodoList')) ?? [],
-      //   }}),
-      //     2000
-      //   )
-      // })
       fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`, {
         method: 'GET',
         headers: {
@@ -43,8 +38,8 @@ import * as React from 'react';
     }
     
     return (
-      <div>
-        <h1>Todo List</h1>
+      <div className={style.Background}>
+        <h1 className={style.todoList}>Todo List</h1>
         <AddTodoForm onAddTodo={addTodo}/>
         {isLoading ? (<p>Loading...</p>) :           
          <TodoList todoList={todoList} onRemoveTodo={removeTodo}/>

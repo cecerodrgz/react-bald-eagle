@@ -1,0 +1,14 @@
+.Background{
+    background-color: lightblue;
+    max-width: 500px;
+    margin: auto;
+    
+}
+
+.todoList{
+    font-family:'Times New Roman', Times, serif;
+    font: bolder;
+    font-display: center;
+    padding-top: 15px;
+    text-align: center;
+}
