@@ -48,8 +48,8 @@ function App() {
           path="/"
           exact
           element={
-            <div>
-              <h1>Todo List</h1>
+            <div className={style.Background}>
+              <h1 className={style.todoList}>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {isLoading ? (
                 <p>Loading...</p>
