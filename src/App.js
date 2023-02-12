@@ -4,6 +4,7 @@ import AddTodoForm from "./AddTodoForm";
 import { useState } from "react";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import style from './App.module.css'
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -47,8 +48,8 @@ function App() {
           path="/"
           exact
           element={
-            <div>
-              <h1>Todo List</h1>
+            <div className={style.Background}>
+              <h1 className={style.todoList}>Todo List</h1>
               <AddTodoForm onAddTodo={addTodo} />
               {isLoading ? (
                 <p>Loading...</p>
