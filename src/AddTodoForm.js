@@ -21,13 +21,13 @@ export default function AddTodoForm({ onAddTodo }) {
 
   return (
     <form onSubmit={handleAddTodo}>
-      <InputWithLabel
-        todoTitle={todoTitle}
-        handleTitleChange={handleTitleChange}
-      >
-        <b>Title:</b>
-      </InputWithLabel>
-      <button type="submit">Add</button>
+        <InputWithLabel
+           todoTitle={todoTitle}
+           handleTitleChange={handleTitleChange}
+           >
+               <b className={style.Title}>Title:</b>
+           </InputWithLabel>
+        <button type="submit" className={style.btn}>Add</button>
     </form>
-  );
+)
 }
