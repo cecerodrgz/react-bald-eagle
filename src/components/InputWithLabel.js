@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
+import { PropTypes } from "prop-types";
+import { func } from "prop-types";
+
 
 export function InputWithLabel(props) {
     const inputRef = React.useRef();
@@ -20,3 +23,9 @@ export function InputWithLabel(props) {
         </>
     )
 };
+
+func.ReactPropTypes = {
+    InputWithLabel: PropTypes.func,
+    todoTitle: PropTypes.object,
+    onChange: PropTypes.func
+  }

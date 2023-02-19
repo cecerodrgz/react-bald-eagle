@@ -1,7 +1,8 @@
 import React from "react";
+import { PropTypes } from "prop-types";
+import { func } from "prop-types";
 
 export default function TodoListItem({ todo, onRemoveTodo }) {
-  // console.log(todoList)
   return (
     <li>
       {todo.fields.Name}
@@ -10,4 +11,11 @@ export default function TodoListItem({ todo, onRemoveTodo }) {
       </button>
     </li>
   );
+}
+
+func.ReactPropTypes = {
+ TodoListItem: PropTypes.func,
+ onClick: PropTypes.func,
+ onRemoveTodo: PropTypes.func,
+ todo: PropTypes.obj 
 }
