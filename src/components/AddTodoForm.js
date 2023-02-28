@@ -5,28 +5,26 @@ import style from './AddTodoForm.module.css'
 import { PropTypes } from "prop-types";
 import { func } from "prop-types";
 
-export default function AddTodoForm({ onAddTodo }) {
+export default function AddTodoForm({ onAddTodo, setTodoList, todoList }) {
   const [todoTitle, setTodoTitle] = useState("");
   const handleTitleChange = (e) => {
     const newTodoTitle = e.target.value;
     setTodoTitle(newTodoTitle);
   };
-  const handleAddTodo = (event) => {
+  const handleAddTodo = async (event) => {
     event.preventDefault();
-    const todoObject = {
-      title: todoTitle,
-      id: Date.now(),
-    };
-
-    onAddTodo(todoObject);
-    setTodoTitle("");
-  };
+    const newTodo = await onAddTodo({Name: todoTitle}); 
+    const newTodoList = ([...newTodo.records, ...todoList]);
+    setTodoList(newTodoList)
+    setTodoTitle('');
+  }
 
   return (
     <form onSubmit={handleAddTodo}>
         <InputWithLabel
            todoTitle={todoTitle}
            handleTitleChange={handleTitleChange}
+           onChange={(e) => setTodoTitle(e.target.value)}
            >
                <b className={style.Title}>Title:</b>
            </InputWithLabel>

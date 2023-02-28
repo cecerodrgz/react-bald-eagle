@@ -1,14 +1,17 @@
-.Background{
-    background-color: lightblue;
-    max-width: 500px;
-    margin: auto;
-    
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+.Background {
+  height: 1000px;
+  padding: 20px;
+  background: #5d6c65;
+  background: linear-gradient(to left, #8cc0c3, #83d4ae);
+  color: #171212;
 }
 
-.todoList{
-    font-family:'Times New Roman', Times, serif;
-    font: bolder;
-    font-display: center;
-    padding-top: 15px;
-    text-align: center;
+.todoList {
+  font: bolder;
+  font-display: center;
+  padding-top: 15px;
+  text-align: center;
+  font-family: "Shantell Sans", cursive, "Ubuntu", sans-serif;
 }

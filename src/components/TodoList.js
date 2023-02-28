@@ -4,7 +4,11 @@ import style from "./TodoList.module.css"
 import { PropTypes } from "prop-types";
 import { func } from "prop-types";
 
- export default function Todolist({todoList, onRemoveTodo}) {
+ export default function Todolist({todoList, 
+  onRemoveTodo, 
+  onEditTodo,
+  onComplete
+}) {
     return(
         <ul className={style.ListItem}>
           { todoList.map((todoListItem) => 
@@ -12,8 +16,11 @@ import { func } from "prop-types";
           key={todoListItem.id} 
           todo={todoListItem}
           onRemoveTodo={onRemoveTodo} 
-          /> 
-        )}       
+          onEditTodo={onEditTodo}
+          onComplete={onComplete}
+        /> 
+        )} 
+        
         </ul>
        )
  };
@@ -22,4 +29,3 @@ import { func } from "prop-types";
   todoList: PropTypes.func,
   todoListItem: PropTypes.obj
 }
-
