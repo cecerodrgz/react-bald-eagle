@@ -10,7 +10,7 @@ import { func } from "prop-types";
   onComplete
 }) {
     return(
-        <ul className={style.ListItem}>
+        <ul className={style.taskBox}>
           { todoList.map((todoListItem) => 
           <TodoListItem 
           key={todoListItem.id} 

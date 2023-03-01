@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, {useState} from "react";
 import { InputWithLabel } from "./InputWithLabel";
 import style from './AddTodoForm.module.css'
 import { PropTypes } from "prop-types";
@@ -20,7 +19,7 @@ export default function AddTodoForm({ onAddTodo, setTodoList, todoList }) {
   }
 
   return (
-    <form onSubmit={handleAddTodo}>
+    <form className={style.taskInput} onSubmit={handleAddTodo}>
         <InputWithLabel
            todoTitle={todoTitle}
            handleTitleChange={handleTitleChange}
