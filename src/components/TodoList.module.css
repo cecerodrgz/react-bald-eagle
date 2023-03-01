@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
 .ListItem{
     color: whitesmoke;
     font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    list-style: none;
+    align-self: center;
+    font-family: "Shantell Sans", cursive, "Ubuntu", sans-serif;
 }
