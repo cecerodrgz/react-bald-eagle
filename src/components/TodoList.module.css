@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
-
-.ListItem{
-    color: whitesmoke;
-    font-size: 20px;
-    list-style: none;
-    align-self: center;
-    font-family: "Shantell Sans", cursive, "Ubuntu", sans-serif;
-}
+  .taskBox{
+    margin-top: 20px;
+    margin-right:  5px;
+    padding: 0 20px 10px 25px;
+    color: forestgreen;
+  }

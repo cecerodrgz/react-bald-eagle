@@ -86,21 +86,16 @@ const removeTodo = async (id) => {
     }
   }, [todoList, isLoading]);
 
-  // const addTodo = (newTodo) => {
-  //   setTodoList([...todoList, newTodo]);
-  // };
-
-
   return (
-    <div>
+    <div className={style.body}>
       <BrowserRouter>
         <Routes>
           <Route
             path="/"
             exact
             element={
-              <div className={style.Background}>
-                <h1 className={style.todoList}>Todo List</h1>
+              <div className={style.wrapper}>
+                <h1 className={style.todoTitle}>Things to do:</h1>
                 <AddTodoForm onAddTodo={addTableData} 
                 todoList={todoList}
                 setTodoList={setTodoList}/>
